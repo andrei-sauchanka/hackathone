@@ -89,7 +89,7 @@ public class TempDataGenerator {
             SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
             List<Location> cities = readCitiesData();
             List<Contact> contacts = readContacts();
-            for(int i = 0;i<100;i++){
+            for(int i = 0;i<200;i++){
                 Trip trip = new Trip();
                 long date = System.currentTimeMillis()+ Math.round(Math.random()*1500000000);
                 trip.setTripDate(date);
