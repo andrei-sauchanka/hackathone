@@ -1,0 +1,1 @@
+http://localhost:8080/passapack/trip/findTrip?from=41.8500000,-87.6500000&to=52.4453,30.9842

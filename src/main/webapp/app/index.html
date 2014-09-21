@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="passAPackApp">
+<head>
+	<meta charset="utf-8">
+	<title>Pass A Pack</title>
+	<meta name="description" content="Pass A Pack">
+	<link rel="stylesheet" href="css/default.css"/>
+</head>
+<body>
+	<!-- ========================================================= -->
+	<!-- begin: HEADER -->
+	<!-- ========================================================= -->
+	<div class="header">
+		<div class="header-icon"><img src="img/icoPack.png" width="40" height="40"/></div><h2 class="header-explanation">Pass a Pack</h2>
+	</div>
+	<!-- ========================================================= -->
+	<!-- end: HEADER -->
+	<!-- ========================================================= -->
+
+	<!-- ========================================================= -->
+	<!-- begin: TABS -->
+	<!-- ========================================================= -->
+	<tabs-widget tabs-urls="/search-trips,/my-trips">
+		<ul class="tabs">
+			<li class="tab active">Ship Package</li><!--
+			--><li class="tab">My Travels</li>
+		</ul>
+	</tabs-widget>
+	<!-- ========================================================= -->
+	<!-- end: TABS -->
+	<!-- ========================================================= -->
+
+	<!-- ========================================================= -->
+	<!-- begin: NG-VIEW -->
+	<!-- ========================================================= -->
+	<div ng-view></div>
+	<!-- ========================================================= -->
+	<!-- end: NG-VIEW -->
+	<!-- ========================================================= -->
+
+	<!-- ========================================================= -->
+	<!-- begin: SCRIPTS -->
+	<!-- ========================================================= -->
+	<script src="js/lib/angular.js"></script>
+	<script src="js/lib/angular-route.js"></script>
+	<script src="js/lib/angular-sanitize.js"></script>
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/const.js"></script>
+	<script src="js/controllers/search-trips.js"></script>
+	<script src="js/controllers/my-trips.js"></script>
+	<script src="js/services/get-city.js"></script>
+	<script src="js/services/get-trips.js"></script>
+	<script src="js/directives/tabs.js"></script>
+	<!-- ========================================================= -->
+	<!-- end: SCRIPTS -->
+	<!-- ========================================================= -->
+</body>
+</html>

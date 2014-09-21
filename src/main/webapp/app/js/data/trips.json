@@ -1,0 +1,97 @@
+[
+	{  
+		"tripDate":1411666700702,
+		"tripDateStr":"09/25/2014",
+		"fromLocation":{  
+			"city":"Chicago",
+			"code":"CLT",
+			"country":"NC"
+		},
+		"toLocation":{  
+			"city":"Minsk",
+			"code":"MSQ",
+			"country":"BY"
+		},
+		"contact":{
+			"name": "John Smith",
+			"email":"john_smith@epam.com"
+		},
+		"hidden":false
+	},
+	{  
+		"tripDate":1411666700702,
+		"tripDateStr":"09/25/2014",
+		"fromLocation":{  
+			"city":"Charlotte",
+			"code":"CLT",
+			"country":"NC"
+		},
+		"toLocation":{  
+			"city":"Edmonton",
+			"code":"YEG",
+			"country":"AB - International"
+		},
+		"contact":{
+			"name": "John Smith",
+			"email":"john_smith@epam.com"
+		},
+		"hidden":false
+	},
+	{  
+		"tripDate":1411666700702,
+		"tripDateStr":"09/25/2014",
+		"fromLocation":{  
+			"city":"Charlotte",
+			"code":"CLT",
+			"country":"NC"
+		},
+		"toLocation":{  
+			"city":"Edmonton",
+			"code":"YEG",
+			"country":"AB - International"
+		},
+		"contact":{
+			"name": "John Smith",
+			"email":"john_smith@epam.com"
+		},
+		"hidden":false
+	},
+	{  
+		"tripDate":1411666700702,
+		"tripDateStr":"09/25/2014",
+		"fromLocation":{  
+			"city":"Charlotte",
+			"code":"CLT",
+			"country":"NC"
+		},
+		"toLocation":{  
+			"city":"Edmonton",
+			"code":"YEG",
+			"country":"AB - International"
+		},
+		"contact":{
+			"name": "John Smith",
+			"email":"john_smith@epam.com"
+		},
+		"hidden":false
+	},
+	{  
+		"tripDate":1411666700702,
+		"tripDateStr":"09/25/2014",
+		"fromLocation":{  
+			"city":"Charlotte",
+			"code":"CLT",
+			"country":"NC"
+		},
+		"toLocation":{  
+			"city":"Edmonton",
+			"code":"YEG",
+			"country":"AB - International"
+		},
+		"contact":{
+			"name": "John Smith",
+			"email":"john_smith@epam.com"
+		},
+		"hidden":false
+	}
+]

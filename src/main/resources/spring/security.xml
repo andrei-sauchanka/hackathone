@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                               http://www.springframework.org/schema/beans/spring-beans.xsd
+                               http://www.springframework.org/schema/security
+                               http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <!-- Enable controller method level security-->
+    <!--<global-method-security pre-post-annotations="enabled"/>-->
+    <!--<http use-expressions="true" auto-config="false" entry-point-ref="authenticationProcessingFilterEntryPoint">-->
+        <!--<session-management>-->
+            <!--<concurrency-control max-sessions="100"/>-->
+        <!--</session-management>-->
+        <!--&lt;!&ndash;remember-me use-secure-cookie="true" userDetails-service-ref="usersAuthenticationService"/&ndash;&gt;-->
+        <!--<custom-filter position="FORM_LOGIN_FILTER" ref="authenticationFilter" />-->
+
+        <!--<intercept-url pattern="/login" access="permitAll" />-->
+        <!--&lt;!&ndash;<form-login login-page="/login" authentication-failure-url="/login?error=true" default-target-url="/"/>&ndash;&gt;-->
+        <!--<logout logout-success-url="/login"/>-->
+        <!--<intercept-url pattern="/j_spring_security_check" access="isAnonymous()"/>-->
+        <!--<intercept-url pattern="/j_spring_security_logout" access="isAnonymous()" />-->
+        <!--<intercept-url pattern="/**" access="isAnonymous()"/>-->
+    <!--</http>-->
+
+    <!--<beans:bean id="authenticationProcessingFilterEntryPoint"-->
+                <!--class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">-->
+        <!--<beans:property name="loginFormUrl" value="/login" />-->
+        <!--<beans:property name="forceHttps" value="false" />-->
+    <!--</beans:bean>-->
+
+    <!--<beans:bean id="authenticationFilter" class=-->
+            <!--"org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">-->
+        <!--<beans:property name="filterProcessesUrl" value="/j_spring_security_check"/>-->
+        <!--<beans:property name="sessionAuthenticationStrategy" ref="sas" />-->
+    <!--</beans:bean>-->
+
+
+    <!--<beans:bean id="sas"-->
+                <!--class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy"/>-->
+
+
+</beans:beans>

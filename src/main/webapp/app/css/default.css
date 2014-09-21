@@ -1,0 +1,308 @@
+/* ========================================================================================== */
+/* begin: TAGS */
+/* ========================================================================================== */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 0;
+}
+
+HTML, BODY, DIV, UL, LI, SPAN {
+	color: #000;
+	font-family: tahoma, arial;
+	margin: 0;
+	padding: 0;
+}
+
+HTML {
+	font-size: 90%;
+	height: 100%;
+}
+
+BODY {
+	background: #fff;
+	height: 100%;
+	min-height: 100%;
+	min-width: 995px;
+}
+
+BUTTON {
+	cursor: pointer;
+}
+
+INPUT[type="text"]:focus,
+INPUT[type="password"]:focus {
+	outline: none;
+}
+
+INPUT[type="checkbox"] {
+	height: 15px;
+	width: 15px;
+	line-height: 30px ;
+	margin: -4px 5px 0 0 ;
+	vertical-align: middle;
+}
+
+IMG {
+	border: 0;
+}
+
+A {
+	color: #4F92BA;
+}
+/* ========================================================================================== */
+/* end: TAGS */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: LOGIN */
+/* ========================================================================================== */
+BODY.login {
+	background: #006F9B url(../img/bkgPattern.png);
+}
+
+DIV.login {
+	margin: 0 auto;
+	width: 500px;
+	padding-top: 150px;
+}
+
+	.login .content {
+		background-color: #fff;
+		height: 320px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		padding: 40px;
+	}
+
+		.login-header {
+			font-weight: normal;
+			color: #2C3F4A;
+		}
+
+		.login-field {
+			margin-top: 30px;
+			overflow: hidden;
+		}
+		
+			.login-input {
+				background-color: #fff;
+				border: 1px solid #ccc;
+				height: 40px;
+				padding: 7px;
+				vertical-align: middle;
+				width: 100%;
+				font-size: 17px;
+			}
+			
+			.login-button {
+				background-color: #1E72A4;
+				border: 0;
+				color: #fff;
+				font-weight: bold;
+				height: 40px;
+				padding: 0 30px;
+				line-height: 40px;
+				font-size: 13px;
+				float: right;
+			}
+/* ========================================================================================== */
+/* end: LOGIN */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: COMMON */
+/* ========================================================================================== */
+.button {
+	background-color: #8FC400;
+	border: 0;
+	color: #fff;
+	font-weight: bold;
+	height: 30px;
+	padding: 0 10px;
+	line-height: 30px;
+}
+/* ========================================================================================== */
+/* end: COMMON */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: HEADER */
+/* ========================================================================================== */
+.header {
+	background: #2C3F4A;
+	padding : 20px;
+	overflow: hidden;
+}
+
+	.header-icon {
+		border-right: 1px dotted #C4C9CC;
+		float: left;
+		height: 40px;
+		padding-right: 10px;
+	}
+	
+	.header-explanation {
+		color: #C4C9CC;
+		display: inline-block;
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 40px;
+		text-transform: uppercase;
+		padding-left : 10px;
+	}
+/* ========================================================================================== */
+/* end: HEADER */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: TABS */
+/* ========================================================================================== */
+.tabs {
+	background-color: #1E72A4;
+}
+
+	.tab {
+		border-left: 1px solid #3684B3;
+		border-right: 1px solid #1D638C;
+		display: inline-block;
+		padding : 0 25px;
+		line-height: 40px;
+		color: #AFE2F1;
+		list-style: none;
+		cursor: pointer;
+	}
+	
+	.tab:first-child {
+		border-left: 0;
+	}
+	.tab:last-child {
+		border-right: 0;
+	}
+
+	.tab.active {
+		background: #2D6D92 url(../img/bkgTabActive.png) center bottom no-repeat;
+	}
+/* ========================================================================================== */
+/* end: TABS */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: FORM */
+/* ========================================================================================== */
+.form {
+	background-color: #F2F0F0;
+	padding: 10px 25px;
+}
+
+	.form-part {
+		border-right: 1px dotted #ccc;
+		float: left;
+		margin-right: 20px;
+		padding-right: 20px;
+	}
+
+		.form-part-title {
+			cursor: pointer;
+			line-height: 30px;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+		
+		.form-part-input {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			height: 30px;
+			padding: 7px;
+			vertical-align: middle;
+		}
+		
+		.form-part-input-data {
+			background: #fff url(../img/icoCalendar.png) center right no-repeat;
+		}
+/* ========================================================================================== */
+/* end: FORM */
+/* ========================================================================================== */
+
+/* ========================================================================================== */
+/* begin: CONTENT */
+/* ========================================================================================== */
+.content {
+	padding: 20px;
+}
+
+.table-row {
+	border-bottom: 1px dotted #ccc;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.table-row:nth-child(odd) {
+	background-color: #fff;
+}
+
+.table-row:nth-child(even) {
+	background-color: #f5f5f5;
+}
+
+	.table-cell {
+		display: inline-block;
+		line-height: 20px;
+		width: 200px;
+	}
+	
+	.table-cell-arrow {
+		background: url(../img/icoArrow.png) center center no-repeat;
+		display: inline-block;
+		width: 30px;
+		margin-right: 20px;
+		line-height: 20px;
+		height: 20px;
+	}
+	
+	.table-cell-button {
+		float: right;
+		width: 70px;
+	}
+
+		.table-cell-button .button {
+			width: 100%;
+		}
+
+		.table-cell-button .button.hide {
+			background-color: #1E72A4;
+		}
+
+.table-empty {
+	text-align: center;
+	line-height: 100px;
+	font-weight: bold;
+}
+
+.cities {
+	background: #fff;
+	border: 1px solid #ccc;
+	position: absolute;
+	width: 250px;
+	margin-top: 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	.cities-item {
+		border-bottom: 1px dotted #ccc;
+		cursor: pointer;
+		padding: 10px;
+		list-style: none;
+	}
+		
+	.cities-item:hover {
+		background-color: #DCE9F1;
+	}
+
+	.cities-item-title {
+		font-weight: bold;
+		color: #4F92BA;
+	}
+/* ========================================================================================== */
+/* end: CONTENT */
+/* ========================================================================================== */

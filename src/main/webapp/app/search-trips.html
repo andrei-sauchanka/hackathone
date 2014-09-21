@@ -1,0 +1,27 @@
+<ul class="cities" id="citiesContainer" ng-show="hasCities">
+	<li class="cities-item" ng-repeat="city in cities" ng-click="onCityItemClick (city)">
+		<div class="cities-item-title">{{city.city}}</div>
+	</li>
+</ul>
+<div class="form">
+	<div class="form-part">
+		<label for="inptFrom" class="form-part-title">Ship from:</label>
+		<input type="text" value="{{from.city}}" ng-keyup="onFromFieldKeyUp ($event)" ng-focus="onFromFieldKeyUp ($event)" id="inptFrom" class="form-part-input"/>
+	</div>
+	<div class="form-part">
+		<label for="inptTo" class="form-part-title">Ship to:</label>
+		<input type="text" value="{{to.city}}" ng-keyup="onToFieldKeyUp ($event)" ng-focus="onToFieldKeyUp ($event)" id="inptTo" class="form-part-input"/>
+	</div>
+	<button class="button" ng-click="onSearchButtonClick ($event)">Get Trips</button>
+</div>
+<div class="content">
+	<div class="table-row" ng-show="hasTrips" ng-repeat="trip in trips">
+		<span class="table-cell"><a href="mailto:{{trip.contact.email}}">{{trip.contact.firstName}} {{trip.contact.lastName}}</a></span>
+		<span class="table-cell">{{trip.fromLocation.city}}</span>
+		<span class="table-cell-arrow">&nbsp;</span>
+		<span class="table-cell">{{trip.toLocation.city}}</a></span>
+		<span class="table-cell">{{trip.tripDateStr}}</span>
+		<span class="table-cell">{{trip.daysLeft}} day(s) left</span>
+	</div>
+	<div class="table-empty" ng-hide="hasTrips">No Trips Found</div>
+</div>
