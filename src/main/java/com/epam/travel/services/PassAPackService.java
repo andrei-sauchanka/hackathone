@@ -7,7 +7,6 @@ import com.epam.travel.util.CommonUtil;
 import com.epam.travel.util.TempDataGenerator;
 import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -84,18 +83,24 @@ public class PassAPackService {
         List<Trip> availableTrips = listTrips();
         int limit = Integer.parseInt(CommonUtil.getPropertyValue("relevancy.distance.limit"));
         for(Trip trip:availableTrips){
-            Double startDelta = CommonUtil.distFrom(shipFrom, trip.getFromLocation());
-            Double endDelta = CommonUtil.distFrom(shipTo, trip.getToLocation());
-            if((startDelta+endDelta)<limit){
-                long timeLeft = trip.getTripDate()-System.currentTimeMillis();
-                if(timeLeft > 0){
-                    int daysLeft = Math.round(timeLeft/(1000*60*60*24));
-                    trip.setDaysLeft(daysLeft);
-                    Double delta = startDelta+endDelta;
-                    while(relevancyMap.containsKey(delta)){
-                        delta++;
+            String shipToCoordinates = shipTo.getLatitude()+","+shipTo.getLongitude();
+            String tripFromToCoordinates = trip.getFromLocation().getLatitude()
+                    +","
+                    +trip.getFromLocation().getLongitude();
+            if(!shipToCoordinates.equals(tripFromToCoordinates)){
+                Double startDelta = CommonUtil.distFrom(shipFrom, trip.getFromLocation());
+                Double endDelta = CommonUtil.distFrom(shipTo, trip.getToLocation());
+                if((startDelta+endDelta)<limit){
+                    long timeLeft = trip.getTripDate()-System.currentTimeMillis();
+                    if(timeLeft > 0){
+                        int daysLeft = Math.round(timeLeft/(1000*60*60*24));
+                        trip.setDaysLeft(daysLeft);
+                        Double delta = startDelta+endDelta;
+                        while(relevancyMap.containsKey(delta)){
+                            delta++;
+                        }
+                        relevancyMap.put(delta, trip);
                     }
-                    relevancyMap.put(delta, trip);
                 }
             }
         }
@@ -104,13 +109,14 @@ public class PassAPackService {
 
 
     private List<Trip> readTripData(){
-        TripList tripData = new TripList();
-        try {
-            String tripJson = TempDataGenerator.readTripDataJSON();
-            tripData = gson.fromJson(tripJson, tripData.getClass());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        List<Trip> tripData = new ArrayList<Trip>();
+//        try {
+//            String tripJson = TempDataGenerator.readTripDataJSON();
+//            tripData = gson.fromJson(tripJson, tripData.getClass());
+            tripData = TempDataGenerator.generateTripList();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return tripData;
     }
 

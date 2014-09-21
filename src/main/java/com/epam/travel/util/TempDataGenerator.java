@@ -85,152 +85,27 @@ public class TempDataGenerator {
 
     public static List<Trip> generateTripList(){
         List<Trip> tripList = new ArrayList<Trip>();
-        Location from = new Location();
-        from.setCity("Chicago");
-        from.setCountry("US");
-        from.setLatitude(41.85);
-        from.setLongitude(-87.65);
-
-        Location to = new Location();
-        to.setCity("Gomel");
-        to.setCountry("belarus");
-        to.setLatitude(52.4416667);
-        to.setLongitude(30.9833333);
-
-        Trip trip = new Trip();
-        long date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-        Date tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("Vasya");
-        trip.getContact().setLastName("Pupkin");
-        tripList.add(trip);
-
-        from = new Location();
-        from.setCity("New York");
-        from.setCountry("US");
-        from.setLatitude(40.7141667);
-        from.setLongitude(-74.0063889);
-
-        to = new Location();
-        to.setCity("Minsk");
-        to.setCountry("belarus");
-        to.setLatitude(53.9);
-        to.setLongitude(27.5666667);
-
-        trip = new Trip();
-        date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("John");
-        trip.getContact().setLastName("Smith");
-        tripList.add(trip);
-
-        from = new Location();
-        from.setCity("Chicago");
-        from.setCountry("US");
-        from.setLatitude(41.85);
-        from.setLongitude(-87.65);
-
-        to = new Location();
-        to.setCity("Gomel");
-        to.setCountry("by");
-        to.setLatitude(52.4416667);
-        to.setLongitude(30.9833333);
-
-        trip = new Trip();
-        date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        format = new SimpleDateFormat("MM/dd/yyyy");
-        tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("Peter");
-        trip.getContact().setLastName("Parker");
-        tripList.add(trip);
-
-        from = new Location();
-        from.setCity("New York");
-        from.setCountry("US");
-        from.setLatitude(40.7141667);
-        from.setLongitude(-74.0063889);
-
-        to = new Location();
-        to.setCity("Minsk");
-        to.setCountry("belarus");
-        to.setLatitude(53.9);
-        to.setLongitude(27.5666667);
-
-        trip = new Trip();
-        date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("Bruce");
-        trip.getContact().setLastName("Waine");
-        tripList.add(trip);
-
-        from = new Location();
-        from.setCity("New York");
-        from.setCountry("US");
-        from.setLatitude(40.7141667);
-        from.setLongitude(-74.0063889);
-
-        to = new Location();
-        to.setCity("Moscow");
-        to.setCountry("ru");
-        to.setLatitude(55.752222);
-        to.setLongitude(37.615556);
-
-        trip = new Trip();
-        date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("Natalia");
-        trip.getContact().setLastName("Romanova");
-        tripList.add(trip);
-
-        from = new Location();
-        from.setCity("New York");
-        from.setCountry("US");
-        from.setLatitude(40.7141667);
-        from.setLongitude(-74.0063889);
-
-        to = new Location();
-        to.setCity("Gomel");
-        to.setCountry("belarus");
-        to.setLatitude(52.4416667);
-        to.setLongitude(30.9833333);
-
-        trip = new Trip();
-        date = System.currentTimeMillis() + Math.round(Math.random() * 1000000000);
-        trip.setFromLocation(from);
-        trip.setToLocation(to);
-        trip.setTripDate(date);
-        tripDate = new Date(trip.getTripDate());
-        trip.setTripDateStr(format.format(tripDate));
-        trip.setContact(new Contact("Vasya_Pupkin@epam.com"));
-        trip.getContact().setFirstName("Natalia");
-        trip.getContact().setLastName("Romanova");
-        tripList.add(trip);
-
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+            List<Location> cities = readCitiesData();
+            List<Contact> contacts = readContacts();
+            for(int i = 0;i<50;i++){
+                Trip trip = new Trip();
+                long date = System.currentTimeMillis()+ Math.round(Math.random()*1500000000);
+                trip.setTripDate(date);
+                Date tripDate  = new Date(trip.getTripDate());
+                trip.setTripDateStr(format.format(tripDate));
+                Contact contact =  contacts.get(Integer.parseInt(""+Math.round(Math.random()*(contacts.size()-1))));
+                trip.setContact(contact);
+                Location fromLocation =  cities.get(Integer.parseInt(""+Math.round(Math.random()*(cities.size()-1))));
+                trip.setFromLocation(fromLocation);
+                Location toLocation =  cities.get(Integer.parseInt(""+Math.round(Math.random()*(cities.size()-1))));
+                trip.setToLocation(toLocation);
+                tripList.add(trip);
+            }
+        } catch (TravelException e) {
+            e.printStackTrace();
+        }
         return tripList;
 
     }
@@ -334,4 +209,38 @@ public class TempDataGenerator {
         return new ArrayList<Location>(locationsMap.values());
     }
 
+
+    private static List<Contact> readContacts(){
+
+        List<Contact> contacts = new ArrayList<Contact>();
+        try {
+                // duplicate full set of settings of CSV file format
+                InputStreamReader in = new InputStreamReader(TempDataGenerator.class.getClassLoader().getResourceAsStream("/data/contacts.csv"));
+                CSVReader reader = new CSVReader(in,
+                                ',', '\'', 0);
+                try {
+
+                    String[] values = reader.readNext();
+                    while ( values != null ) {
+                        if(values.length>2){
+                            String email = values[0];
+                            String name = values[1];
+                            String secondName  = values[2];
+                            Contact contact = new Contact(email);
+                            contact.setFirstName(name);
+                            contact.setLastName(secondName);
+                            contacts.add(contact);
+                        }
+                        values = reader.readNext();
+                    }
+                } finally {
+                        reader.close();
+                }
+
+        } catch (IOException e) {
+                // we have to process exceptions when it is not required
+                e.printStackTrace();
+        }
+        return contacts;
+    }
 }
