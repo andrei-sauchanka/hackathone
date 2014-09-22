@@ -20,16 +20,17 @@ public class LoginController {
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
     @ResponseBody
     public String authentication(@RequestParam String login,
-                                  @RequestParam String password){
+                                  @RequestParam String password) throws Exception {
         boolean result = false;
         try {
-            ProcessBuilder pb = new ProcessBuilder("curl","-u", login+":"+password, "\"https://e3s.epam.com/rest/e3s-eco-scripting-impl/0.1.0/data/searchFts?type=com.epam.e3s.app.people.api.data.EmployeeEntity&query=\\{\\\"statements\\\":\\[\\{\\\"query\\\":\\\"mongodb\\\"\\}\\],\\\"limit\\\":10\\}\"");
+            ProcessBuilder pb = new ProcessBuilder("curl","-u", login+":"+password, "https://e3s.epam.com/rest/e3s-eco-scripting-impl/0.1.0/data/searchFts?type=com.epam.e3s.app.people.api.data.EmployeeEntity&query=\\{\\\"statements\\\":\\[\\{\\\"query\\\":\\\"mongodb\\\"\\}\\],\\\"limit\\\":10\\}\"");
 
             pb.redirectErrorStream(true);
             Process p = pb.start();
 
             InputStream is = p.getInputStream();
             List<String> data = IOUtils.readLines(is);
+            System.out.println(data);
             is.close();
             for (String s : data) {
                 if (s.contains("manager")) {
@@ -38,7 +39,7 @@ public class LoginController {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            return e.getMessage();
         }
         return ""+result;
     }
