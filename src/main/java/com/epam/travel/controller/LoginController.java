@@ -19,7 +19,7 @@ public class LoginController {
 
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
     @ResponseBody
-    public boolean authentication(@RequestParam String login,
+    public String authentication(@RequestParam String login,
                                   @RequestParam String password){
         boolean result = false;
         try {
@@ -40,7 +40,7 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return result;
+        return ""+result;
     }
 
 }
