@@ -19,14 +19,15 @@
 	<button class="button" ng-click="onRegisterButtonClick ($event)">Register New Trip</button>
 </div>
 <div class="content">
-	<div class="table-row" ng-show="hasTrips" ng-repeat="trip in trips">
-		<span class="table-cell"><a href="mailto:{{traveller.email}}">{{trip.contact.name}}</a></span>
-		<span class="table-cell">{{trip.fromLocation.city}}</span>
-		<span class="table-cell-arrow">&nbsp;</span>
-		<span class="table-cell">{{trip.toLocation.city}}</a></span>
-		<span class="table-cell">{{trip.tripDateStr}}</span>
-		<span class="table-cell">{{trip.left}}</span>
-		<span class="table-cell-button"><button class="button hide" ng-click="onHideButtonClick (trip)" ng-hide="trip.hidden">Hide</button><button class="button"  ng-click="onShowButtonClick (trip)" ng-show="trip.hidden">Show</button></span>
-	</div>
+	<table class="table" ng-show="hasTrips">
+		<tr class="table-row" ng-repeat="trip in trips">
+			<td class="table-cell">{{trip.fromLocation.city}}</td>
+			<td class="table-cell-arrow">&nbsp;</td>
+			<td class="table-cell">{{trip.toLocation.city}}</a></td>
+			<td class="table-cell">{{trip.tripDateStr}}</td>
+			<td class="table-cell">{{trip.left}} day(s) left</td>
+			<td class="table-cell-button"><button class="button hide" ng-click="onHideButtonClick (trip)" ng-hide="trip.hidden">Hide</button><button class="button"  ng-click="onShowButtonClick (trip)" ng-show="trip.hidden">Show</button></td>
+		</tr>
+	</table>
 	<div class="table-empty" ng-hide="hasTrips">No Trips Found</div>
 </div>

@@ -15,13 +15,16 @@
 	<button class="button" ng-click="onSearchButtonClick ($event)">Get Trips</button>
 </div>
 <div class="content">
-	<div class="table-row" ng-show="hasTrips" ng-repeat="trip in trips">
-		<span class="table-cell"><a href="mailto:{{trip.contact.email}}">{{trip.contact.firstName}} {{trip.contact.lastName}}</a></span>
-		<span class="table-cell">{{trip.fromLocation.city}}</span>
-		<span class="table-cell-arrow">&nbsp;</span>
-		<span class="table-cell">{{trip.toLocation.city}}</a></span>
-		<span class="table-cell">{{trip.tripDateStr}}</span>
-		<span class="table-cell">{{trip.daysLeft}} day(s) left</span>
-	</div>
+	<table class="table" ng-show="hasTrips">
+		<tr class="table-row" ng-repeat="trip in trips">
+			<td class="table-cell-photo"><img src="img/photo.png" width="30" height="30"/></td>
+			<td class="table-cell"><a href="mailto:{{trip.contact.email}}">{{trip.contact.firstName}} {{trip.contact.lastName}}</a></td>
+			<td class="table-cell-arrow">&nbsp;</td>
+			<td class="table-cell">{{trip.toLocation.city}}</a></td>
+			<td class="table-cell">{{trip.tripDateStr}}</td>
+			<td class="table-cell">{{trip.daysLeft}} day(s) left</td>
+			<td class="table-cell-last"></td>
+		</tr>
+	</table>
 	<div class="table-empty" ng-hide="hasTrips">No Trips Found</div>
 </div>
