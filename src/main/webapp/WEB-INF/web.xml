@@ -5,7 +5,7 @@
 
 	<display-name>Spring MVC Application</display-name>
     <welcome-file-list>
-        <welcome-file>/app/login.html</welcome-file>
+        <welcome-file>/login.html</welcome-file>
     </welcome-file-list>
 
     <!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
