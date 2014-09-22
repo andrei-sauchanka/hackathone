@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pass A Pack</title>
+	<meta name="description" content="Pass A Pack">
+	<link rel="stylesheet" href="app/css/default.css"/>
+</head>
+<body class="login">
+	<!-- ========================================================= -->
+	<!-- begin: LOGIN -->
+	<!-- ========================================================= -->
+	<div class="login">
+
+		<!-- ========================================================= -->
+		<!-- begin: HEADER -->
+		<!-- ========================================================= -->
+		<div class="header">
+			<div class="header-icon"><img src="app/img/icoPack.png" width="40" height="40"/></div><h2 class="header-explanation">Pass a Pack</h2>
+		</div>
+		<!-- ========================================================= -->
+		<!-- end: HEADER -->
+		<!-- ========================================================= -->
+
+		<!-- ========================================================= -->
+		<!-- begin: HEADER -->
+		<!-- ========================================================= -->
+		<div class="content">
+			<h2 class="login-header">Domain Account Login</h2>
+			<div class="login-field">
+				<input id="inptLogin" class="login-input" type="text" value="john_smith@epam.com"/>
+			</div>
+			<div class="login-field">
+				<input id="inptPassword" class="login-input" type="password" value="qwerty12345"/>
+			</div>
+			<div class="login-field">
+				<button class="login-button" id="btnLogin">Login</button>
+			</div>
+		</div>
+		<!-- ========================================================= -->
+		<!-- end: HEADER -->
+		<!-- ========================================================= -->
+		
+	</div>
+	<!-- ========================================================= -->
+	<!-- end: LOGIN -->
+	<!-- ========================================================= -->
+
+	<script src="app/js/lib/jquery.js"></script>
+	<script src="app/js/const.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btnLogin').click(function() {
+			$.ajax ({
+				url:SERVICE_LOGIN_URL + '?login=' + $('#inptLogin').val() + '&password=' + $('#inptPassword').val(),
+				success: function (_result) {
+					if (_result == 'true') {
+						location.href = 'index.html#';
+					}
+					else {
+						alert ('Login failed!');
+					}
+				},
+				error: function (_xhr) {
+					alert (_xhr.status);
+				}
+			});
+		});
+	});
+	</script>
+</body>
+</html>
