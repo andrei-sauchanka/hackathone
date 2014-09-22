@@ -150,6 +150,50 @@ DIV.login {
 		text-transform: uppercase;
 		padding-left : 10px;
 	}
+	
+	.logout {
+		float: right;
+		overflow: hidden;
+		position: relative;
+	}
+	
+		.user-photo {
+			background-color: #4C6B7B;
+			padding: 3px;
+			float: left;
+			margin-right: 10px;
+			height: 36px;
+			width: 36px;
+		}
+
+		.user-info {
+			float: left;
+			margin-right: 30px;
+		}
+		
+			.user-name {
+				margin-top: 1px;
+				color: #C4C9CC;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			
+			.user-title {
+				color: #C4C9CC;
+				font-size: 11px;
+			}
+	
+		.logout-button {
+			background: #4C6B7B url(../img/icoLogout.png) center center no-repeat;
+			width: 36px;
+			height: 36px;
+			cursor: pointer;
+			float: right;
+		}
+
+		.logout-button:hover {
+			background-color: #7FA1B4;
+		}
 /* ========================================================================================== */
 /* end: HEADER */
 /* ========================================================================================== */
@@ -230,10 +274,13 @@ DIV.login {
 	padding: 20px;
 }
 
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
 .table-row {
 	border-bottom: 1px dotted #ccc;
-	padding: 10px;
-	overflow: hidden;
 }
 
 .table-row:nth-child(odd) {
@@ -245,27 +292,35 @@ DIV.login {
 }
 
 	.table-cell {
-		display: inline-block;
-		line-height: 20px;
-		width: 200px;
+		padding: 10px;
+		overflow: hidden;
+		aline-height: 30px;
+		white-space: nowrap;
 	}
-	
+
+	.table-cell-photo {
+		padding: 10px;
+		width: 30px;
+	}
+
 	.table-cell-arrow {
 		background: url(../img/icoArrow.png) center center no-repeat;
-		display: inline-block;
+		padding: 10px;
 		width: 30px;
-		margin-right: 20px;
-		line-height: 20px;
-		height: 20px;
+	}
+	
+	.table-cell-last {
+		width: 100%;
 	}
 	
 	.table-cell-button {
-		float: right;
-		width: 70px;
+		padding: 10px;
+		width:100%;
 	}
 
 		.table-cell-button .button {
-			width: 100%;
+			float: right;
+			width: 70px;
 		}
 
 		.table-cell-button .button.hide {
